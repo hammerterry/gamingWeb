@@ -1,12 +1,28 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import gamesData from '../data/games.json';
 import type { Game } from '../types/game';
+import { fetchGames } from '../api/games';
 
 export default function CalendarPage() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [games, setGames] = useState<Game[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const games = gamesData as Game[];
+  // 從 API 載入遊戲資料
+  useEffect(() => {
+    const loadGames = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchGames({ limit: 500 });
+        setGames(data.games);
+      } catch (error) {
+        console.error('Failed to load games:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadGames();
+  }, []);
 
   const calendarData = useMemo(() => {
     const year = currentDate.getFullYear();
@@ -26,6 +42,7 @@ export default function CalendarPage() {
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
       const dayGames = games.filter(game => {
+        if (!game.release_date) return false;
         const gameDate = new Date(game.release_date);
         return gameDate.getFullYear() === year &&
                gameDate.getMonth() === month &&
@@ -63,6 +80,14 @@ export default function CalendarPage() {
            date.getFullYear() === today.getFullYear();
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-xl">載入中...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <header className="bg-gray-800 shadow-lg">
@@ -71,6 +96,7 @@ export default function CalendarPage() {
             ← 返回首頁
           </Link>
           <h1 className="text-3xl font-bold">發售日曆</h1>
+          <p className="text-gray-400 mt-2">共 {games.length} 款遊戲</p>
         </div>
       </header>
 

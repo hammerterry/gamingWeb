@@ -153,6 +153,7 @@ class IGDBClient:
             cover_url = f"https:{igdb_game['cover']['url']}".replace("t_thumb", "t_cover_big")
 
         return {
+            "rawg_id": igdb_game.get("id"),  # 使用 IGDB ID 作為 rawg_id
             "title": igdb_game.get("name", "Unknown"),
             "description": igdb_game.get("summary", ""),
             "release_date": release_date,
