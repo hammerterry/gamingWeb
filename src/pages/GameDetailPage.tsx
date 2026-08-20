@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import gamesData from '../data/games.json';
 import type { Game } from '../types/game';
+import { extractYouTubeId } from '../utils/youtube';
 
 export default function GameDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -191,10 +192,16 @@ export default function GameDetailPage() {
         {game.trailer_url && (
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">官方預告片</h2>
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-              <p className="text-gray-400">
-                影片嵌入：{game.trailer_url}
-              </p>
+            <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${extractYouTubeId(game.trailer_url)}`}
+                title={`${game.title} trailer`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </section>
         )}

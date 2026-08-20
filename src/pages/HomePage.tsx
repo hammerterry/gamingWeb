@@ -6,11 +6,22 @@ import GameCard from '../components/GameCard';
 export default function HomePage() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | 'all'>('all');
   const [sortBy, setSortBy] = useState<'release_date' | 'rating'>('release_date');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const platforms: Platform[] = ['PC', 'PS5', 'PS4', 'Xbox Series X', 'Xbox One', 'Nintendo Switch'];
 
   const filteredAndSortedGames = useMemo(() => {
     let filtered = gamesData as Game[];
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(game => 
+        game.title.toLowerCase().includes(query) ||
+        game.developer.toLowerCase().includes(query) ||
+        game.genres.some(g => g.toLowerCase().includes(query))
+      );
+    }
 
     // Filter by platform
     if (selectedPlatform !== 'all') {
@@ -29,7 +40,7 @@ export default function HomePage() {
     });
 
     return sorted;
-  }, [selectedPlatform, sortBy]);
+  }, [selectedPlatform, sortBy, searchQuery]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -37,6 +48,17 @@ export default function HomePage() {
       <header className="bg-gray-800 shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold mb-6">GamingWeb</h1>
+          
+          {/* Search */}
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="搜尋遊戲名稱、開發商或類型..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full md:w-96 px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
           
           {/* Filters */}
           <div className="flex flex-wrap gap-4 items-center">
