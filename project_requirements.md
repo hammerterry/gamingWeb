@@ -37,6 +37,7 @@
 | 2.1.3 | 平台篩選 | 按 PC/PS5/Xbox/Switch 等平台過濾 | 🔴 |
 | 2.1.4 | 日期範圍 | 本週/本月/下月/自訂日期 | 🟠 |
 | 2.1.5 | 搜尋 | 遊戲名稱搜尋 | 🟠 |
+| 2.1.6 | 排序選項 | 最新發售 / 最高評分 / 最多評論 | 🔴 |
 
 ### 2.2 遊戲內頁
 
@@ -47,8 +48,9 @@
 | 2.2.3 | 遊戲截圖 | 多張遊戲畫面截圖 | 🔴 |
 | 2.2.4 | 平台評分 | Metacritic、Steam、OpenCritic 等平台分數 | 🔴 |
 | 2.2.5 | 遊戲簡介 | 遊戲描述/故事背景 | 🟠 |
-| 2.2.6 | 預告片 | 嵌入 YouTube 預告片 | 🟡 |
-| 2.2.7 | 系統需求 | PC 最低/建議配備 | 🟡 |
+| 2.2.6 | 官方影片 | 嵌入 YouTube 官方預告片/遊戲介紹影片 | 🔴 |
+| 2.2.7 | 購買連結 | Amazon / Steam / PS Store 等購買連結 | 🔴 |
+| 2.2.8 | 系統需求 | PC 最低/建議配備 | 🟡 |
 
 ### 2.3 評分展示
 
@@ -121,8 +123,17 @@
 │  📝 遊戲簡介                                   │
 │  這是一款開放世界 RPG...                        │
 │                                              │
-│  🎬 預告片                                    │
-│  [YouTube 嵌入]                               │
+│  🎬 官方影片                                  │
+│  ┌─────────────────────────────────────┐      │
+│  │        YouTube 預告片嵌入             │      │
+│  └─────────────────────────────────────┘      │
+│                                              │
+│  🛒 購買                                      │
+│  [Steam $59.99] [Amazon $54.99] [PS Store]   │
+│                                              │
+│  💻 系統需求 (PC)                              │
+│  最低: i5-10400, GTX 1060, 16GB RAM          │
+│  建議: i7-12700, RTX 3070, 32GB RAM          │
 └──────────────────────────────────────────────┘
 ```
 
@@ -144,7 +155,14 @@ interface Game {
   developer: string;             // 開發商
   publisher: string;             // 發行商
   genres: string[];              // 遊戲類型
-  trailer_url?: string;          // YouTube 預告片連結
+  trailer_url?: string;          // YouTube 官方預告片/介紹影片
+  purchase_links?: {             // 購買連結
+    steam?: string;
+    amazon?: string;
+    ps_store?: string;
+    xbox_store?: string;
+    nintendo_eshop?: string;
+  };
   system_requirements?: {        // PC 系統需求
     minimum: string;
     recommended: string;
