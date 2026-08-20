@@ -1,17 +1,38 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import gamesData from '../data/games.json';
 import type { Game, Platform } from '../types/game';
+import { fetchGames } from '../api/games';
 import GameCard from '../components/GameCard';
 
 export default function HomePage() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | 'all'>('all');
   const [sortBy, setSortBy] = useState<'release_date' | 'rating'>('release_date');
   const [searchQuery, setSearchQuery] = useState('');
+  const [apiGames, setApiGames] = useState<Game[]>([]);
+  const [useApi, setUseApi] = useState(false);
 
   const platforms: Platform[] = ['PC', 'PS5', 'PS4', 'Xbox Series X', 'Xbox One', 'Nintendo Switch'];
 
+  // 嘗試從 API 載入資料
+  useEffect(() => {
+    fetchGames({ limit: 100 })
+      .then(data => {
+        if (data.games.length > 0) {
+          setApiGames(data.games);
+          setUseApi(true);
+        }
+      })
+      .catch(() => {
+        // API 不可用，使用靜態資料
+        setUseApi(false);
+      });
+  }, []);
+
+  // 使用 API 資料或靜態資料
+  const sourceGames = useApi ? apiGames : (gamesData as Game[]);
+
   const filteredAndSortedGames = useMemo(() => {
-    let filtered = gamesData as Game[];
+    let filtered = sourceGames;
 
     // Filter by search query
     if (searchQuery.trim()) {
@@ -40,14 +61,19 @@ export default function HomePage() {
     });
 
     return sorted;
-  }, [selectedPlatform, sortBy, searchQuery]);
+  }, [selectedPlatform, sortBy, searchQuery, sourceGames]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
       <header className="bg-gray-800 shadow-lg">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold mb-6">GamingWeb</h1>
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-3xl font-bold">GamingWeb</h1>
+            <a href="/games/calendar" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+              📅 發售日曆
+            </a>
+          </div>
           
           {/* Search */}
           <div className="mb-4">
@@ -106,8 +132,9 @@ export default function HomePage() {
 
       {/* Games Grid */}
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-4 text-gray-400">
-          顯示 {filteredAndSortedGames.length} 款遊戲
+        <div className="mb-4 text-gray-400 flex items-center gap-2">
+          <span>顯示 {filteredAndSortedGames.length} 款遊戲</span>
+          {useApi && <span className="text-xs bg-green-600 px-2 py-1 rounded">API</span>}
         </div>
         
         {filteredAndSortedGames.length === 0 ? (
