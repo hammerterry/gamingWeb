@@ -173,17 +173,78 @@ interface GameRating {
 }
 ```
 
+### 4.4 User（使用者）— Phase 4
+
+```typescript
+interface User {
+  id: string;
+  email: string;
+  username: string;
+  avatar_url?: string;
+  role: 'user' | 'developer' | 'admin';
+  created_at: string;
+}
+```
+
+### 4.5 UserRating（使用者評分）— Phase 4
+
+```typescript
+interface UserRating {
+  id: string;
+  user_id: string;
+  game_id: string;
+  score: number;                 // 1-10
+  comment: string;               // 文字評論
+  rating_type: 'normal' | 'completed';  // 普通評分 / 通關後評分
+  completion_proof?: string;     // 通關證明截圖 URL
+  proof_status?: 'pending' | 'approved' | 'rejected';
+  weight: number;                // 評分權重（普通=1, 通關=2）
+  created_at: string;
+  updated_at: string;
+}
+```
+
+### 4.6 IndieGame（獨立遊戲）— Phase 5
+
+```typescript
+interface IndieGame extends Game {
+  developer_id: string;
+  status: 'concept' | 'in_development' | 'alpha' | 'beta' | 'released' | 'early_access';
+  updates: DevUpdate[];
+  followers: number;
+  wishlist_count: number;
+}
+
+interface DevUpdate {
+  id: string;
+  game_id: string;
+  title: string;
+  content: string;               // Markdown
+  media_urls: string[];
+  created_at: string;
+}
+```
+
+### 4.7 評分計算邏輯
+
+```
+加權平均分 = (普通評分總和 × 1 + 通關評分總和 × 2) / (普通評分數 × 1 + 通關評分數 × 2)
+```
+
+通關評分的權重是普通評分的 2 倍，因為通關玩家對遊戲的理解更全面。
+
+
 ---
 
 ## 5. 技術棧建議
 
-| 層 | 技術 | 原因 |
+| 層 | Phase 1-3（MVP） | Phase 4+（社群） |
 |------|------|------|
-| 前端 | React + Vite + TypeScript | 與 StockTrading 專案一致 |
-| 樣式 | Tailwind CSS | 快速開發、響應式 |
-| 後端 | 可選（先用靜態 JSON） | MVP 不需要後端 |
-| 資料源 | 手動維護 JSON + 爬蟲輔助 | 無需 API key |
-| 部署 | Vercel / GitHub Pages | 免費、靜態網站 |
+| 前端 | React + Vite + TypeScript + Tailwind CSS | 同左 |
+| 後端 | 無（靜態 JSON） | FastAPI + PostgreSQL |
+| 認證 | 無 | JWT + bcrypt |
+| 圖片儲存 | 外部 URL | S3 / Cloudflare R2（通關證明截圖） |
+| 部署 | Vercel / GitHub Pages | VPS（Docker Compose） |
 
 ### MVP 階段：純前端 + JSON 資料
 
@@ -237,6 +298,29 @@ gamingWeb/
 | 6.11 | 自動爬蟲 | 從 Metacritic/Steam 自動更新資料 | ⬜ |
 | 6.12 | 後端 API | 用 FastAPI 提供資料 API | ⬜ |
 | 6.13 | 資料庫 | PostgreSQL 儲存遊戲資料 | ⬜ |
+
+### Phase 4：社群功能（P2）
+
+| # | 工作項 | 說明 | 狀態 |
+|---|--------|------|:--:|
+| 6.14 | 登入/註冊 | Email + 密碼註冊，JWT 登入 | ⬜ |
+| 6.15 | 使用者資料頁 | 頭像、暱稱、遊戲收藏、評分歷史 | ⬜ |
+| 6.16 | 普通評分 | 1-10 分 + 文字評論，可編輯/刪除 | ⬜ |
+| 6.17 | 通關後評分 | 需上傳通關證明（截圖）才能評分 | ⬜ |
+| 6.18 | 通關證明審核 | 管理員審核通關證明（通過/拒絕） | ⬜ |
+| 6.19 | 評分權重 | 通關後評分權重 > 普通評分（如 2:1） | ⬜ |
+| 6.20 | 評分排序 | 可按「通關評分優先」排序 | ⬜ |
+
+### Phase 5：獨立遊戲專區（P2）
+
+| # | 工作項 | 說明 | 狀態 |
+|---|--------|------|:--:|
+| 6.21 | 獨立遊戲列表 | 獨立遊戲專區頁面，與商業遊戲分開 | ⬜ |
+| 6.22 | 開發者註冊 | 獨立開發者身分申請（需審核） | ⬜ |
+| 6.23 | 開發進度更新 | 開發者發布開發日誌/進度更新 | ⬜ |
+| 6.24 | 進度時間線 | 視覺化顯示開發歷程 | ⬜ |
+| 6.25 | 願望清單/追蹤 | 玩家可追蹤獨立遊戲，發售時通知 | ⬜ |
+| 6.26 | 開發者互動 | 玩家留言/問題，開發者回覆 | ⬜ |
 
 ---
 
