@@ -21,9 +21,8 @@ services:
   api:
     build: .
     container_name: gamingweb-api
-    environment:
-      DATABASE_URL: postgresql://postgres:postgres@db:5432/gamingweb
-      RAWG_API_KEY: ${RAWG_API_KEY}
+    env_file:
+      - .env
     ports:
       - "8001:8000"
     depends_on:

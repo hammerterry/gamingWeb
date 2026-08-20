@@ -51,6 +51,10 @@ class GameService:
         """根據 RAWG ID 獲取遊戲"""
         return self.db.query(Game).filter(Game.rawg_id == rawg_id).first()
 
+    def get_game_by_title(self, title: str) -> Optional[Game]:
+        """根據標題獲取遊戲"""
+        return self.db.query(Game).filter(Game.title == title).first()
+
     def create_game(self, game_data: dict) -> Game:
         """創建遊戲"""
         game = Game(

@@ -41,10 +41,14 @@ export async function fetchGames(params: {
     screenshots: g.screenshots || [],
     description: g.description || '',
     release_date: g.release_date || '',
-    platforms: g.platforms?.map((p: any) => p.name) || [],
+    platforms: Array.isArray(g.platforms) && g.platforms.length > 0 && typeof g.platforms[0] === 'object'
+      ? g.platforms.map((p: any) => p.name)
+      : (g.platforms || []),
     developer: g.developer || '',
     publisher: g.publisher || '',
-    genres: g.genres?.map((gen: any) => gen.name) || [],
+    genres: Array.isArray(g.genres) && g.genres.length > 0 && typeof g.genres[0] === 'object'
+      ? g.genres.map((gen: any) => gen.name)
+      : (g.genres || []),
     trailer_url: g.trailer_url,
     purchase_links: g.purchase_links,
     system_requirements: g.system_requirements,
@@ -74,10 +78,14 @@ export async function fetchGameById(id: string): Promise<Game> {
     screenshots: g.screenshots || [],
     description: g.description || '',
     release_date: g.release_date || '',
-    platforms: g.platforms?.map((p: any) => p.name) || [],
+    platforms: Array.isArray(g.platforms) && g.platforms.length > 0 && typeof g.platforms[0] === 'object'
+      ? g.platforms.map((p: any) => p.name)
+      : (g.platforms || []),
     developer: g.developer || '',
     publisher: g.publisher || '',
-    genres: g.genres?.map((gen: any) => gen.name) || [],
+    genres: Array.isArray(g.genres) && g.genres.length > 0 && typeof g.genres[0] === 'object'
+      ? g.genres.map((gen: any) => gen.name)
+      : (g.genres || []),
     trailer_url: g.trailer_url,
     purchase_links: g.purchase_links,
     system_requirements: g.system_requirements,
