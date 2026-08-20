@@ -1,0 +1,326 @@
+[
+  {
+    "id": "1",
+    "title": "The Witcher 4: Polaris",
+    "cover_url": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop"
+    ],
+    "description": "CD Projekt Red 的下一款巫師系列作品，採用虛幻引擎 5 打造，帶來全新的冒險故事。",
+    "release_date": "2026-09-15",
+    "platforms": ["PC", "PS5", "Xbox Series X"],
+    "developer": "CD Projekt Red",
+    "publisher": "CD Projekt",
+    "genres": ["RPG", "Action", "Open World"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "amazon": "https://www.amazon.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-10400, GTX 1060, 16GB RAM",
+      "recommended": "Intel i7-12700, RTX 3070, 32GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 92, "max_score": 100},
+      {"source": "opencritic", "score": 91, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Elden Ring: Shadow of the Erdtree",
+    "cover_url": "https://images.unsplash.com/photo-1550745165-9bc0b252cb26?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=450&fit=crop"
+    ],
+    "description": "FromSoftware 的曠世巨作大型 DLC，帶來全新的地圖、Boss 和武器。",
+    "release_date": "2026-08-25",
+    "platforms": ["PC", "PS5", "PS4", "Xbox Series X", "Xbox One"],
+    "developer": "FromSoftware",
+    "publisher": "Bandai Namco",
+    "genres": ["Action RPG", "Souls-like", "Open World"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-8400, GTX 1060, 12GB RAM",
+      "recommended": "Intel i7-8700K, RTX 2070, 16GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 95, "max_score": 100},
+      {"source": "steam", "score": 94, "max_score": 100, "count": 50000}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Final Fantasy VII Rebirth",
+    "cover_url": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
+    ],
+    "description": "最終幻想 VII 重製版第二章，克勞德和他的夥伴們將離開米德加，探索更廣闊的世界。",
+    "release_date": "2026-11-20",
+    "platforms": ["PS5"],
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "genres": ["RPG", "Action"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "ps_store": "https://store.playstation.com"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 88, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Starfield: Shattered Space",
+    "cover_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop"
+    ],
+    "description": "Bethesda 的太空 RPG 大型 DLC，探索全新的星系和文明。",
+    "release_date": "2026-10-05",
+    "platforms": ["PC", "Xbox Series X"],
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "genres": ["RPG", "Open World", "Sci-Fi"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "xbox_store": "https://www.xbox.com"
+    },
+    "system_requirements": {
+      "minimum": "AMD Ryzen 5 3600X, RX 5700, 16GB RAM",
+      "recommended": "AMD Ryzen 7 5800X, RX 6800 XT, 32GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 78, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Hollow Knight: Silksong",
+    "cover_url": "https://images.unsplash.com/photo-1550745165-9bc0b252cb26?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=450&fit=crop"
+    ],
+    "description": "期待已久的空洞騎士續作，扮演黃蜂女探索全新的昆蟲王國。",
+    "release_date": "2026-09-04",
+    "platforms": ["PC", "Nintendo Switch"],
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "genres": ["Metroidvania", "Action", "Indie"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "nintendo_eshop": "https://www.nintendo.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel Core 2 Duo, 4GB RAM",
+      "recommended": "Intel i5, 8GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 90, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "6",
+    "title": "Grand Theft Auto VI",
+    "cover_url": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
+    ],
+    "description": "Rockstar Games 的曠世巨作，重返 Vice City，帶來全新的犯罪故事。",
+    "release_date": "2026-10-26",
+    "platforms": ["PS5", "Xbox Series X"],
+    "developer": "Rockstar Games",
+    "publisher": "Rockstar Games",
+    "genres": ["Action", "Adventure", "Open World"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "ps_store": "https://store.playstation.com",
+      "xbox_store": "https://www.xbox.com"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 96, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "7",
+    "title": "Dragon Age: The Veilguard",
+    "cover_url": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&h=450&fit=crop"
+    ],
+    "description": "BioWare 的回歸之作，龍騎士系列最新作品，拯救世界免於毀滅。",
+    "release_date": "2026-09-30",
+    "platforms": ["PC", "PS5", "Xbox Series X"],
+    "developer": "BioWare",
+    "publisher": "Electronic Arts",
+    "genres": ["RPG", "Action"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "amazon": "https://www.amazon.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-8400, GTX 1060, 16GB RAM",
+      "recommended": "Intel i7-9700K, RTX 2060, 16GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 85, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "8",
+    "title": "Avowed",
+    "cover_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop"
+    ],
+    "description": "Obsidian 打造的第一人稱奇幻 RPG，設定在永恆之柱的世界。",
+    "release_date": "2026-08-28",
+    "platforms": ["PC", "Xbox Series X"],
+    "developer": "Obsidian Entertainment",
+    "publisher": "Xbox Game Studios",
+    "genres": ["RPG", "First-Person", "Fantasy"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "xbox_store": "https://www.xbox.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-10400, GTX 1660, 16GB RAM",
+      "recommended": "Intel i7-11700K, RTX 3070, 32GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 87, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "9",
+    "title": "Metroid Prime 4: Beyond",
+    "cover_url": "https://images.unsplash.com/photo-1550745165-9bc0b252cb26?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
+    ],
+    "description": "任天堂經典系列回歸，薩姆斯·阿蘭的全新冒險。",
+    "release_date": "2026-12-15",
+    "platforms": ["Nintendo Switch"],
+    "developer": "Retro Studios",
+    "publisher": "Nintendo",
+    "genres": ["Action", "Adventure", "First-Person"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "nintendo_eshop": "https://www.nintendo.com"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 91, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "10",
+    "title": "Black Myth: Wukong",
+    "cover_url": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop"
+    ],
+    "description": "Game Science 打造的動作 RPG，以西遊記為背景，挑戰各種神話生物。",
+    "release_date": "2026-09-10",
+    "platforms": ["PC", "PS5"],
+    "developer": "Game Science",
+    "publisher": "Game Science",
+    "genres": ["Action RPG", "Souls-like"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "ps_store": "https://store.playstation.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-8400, GTX 1060, 16GB RAM",
+      "recommended": "Intel i7-9700K, RTX 2060, 16GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 89, "max_score": 100},
+      {"source": "steam", "score": 92, "max_score": 100, "count": 30000}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "11",
+    "title": "Frostpunk 2",
+    "cover_url": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=450&fit=crop"
+    ],
+    "description": "11 bit studios 的生存城市建造遊戲續作，在極寒世界中建立文明。",
+    "release_date": "2026-10-15",
+    "platforms": ["PC"],
+    "developer": "11 bit studios",
+    "publisher": "11 bit studios",
+    "genres": ["City Builder", "Survival", "Strategy"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-6600, GTX 960, 8GB RAM",
+      "recommended": "Intel i7-8700, RTX 2060, 16GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 83, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  },
+  {
+    "id": "12",
+    "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+    "cover_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=600&fit=crop",
+    "screenshots": [
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
+    ],
+    "description": "GSC Game World 的開放世界射擊 RPG，探索切爾諾貝利隔離區。",
+    "release_date": "2026-11-10",
+    "platforms": ["PC", "Xbox Series X"],
+    "developer": "GSC Game World",
+    "publisher": "GSC Game World",
+    "genres": ["FPS", "RPG", "Survival Horror"],
+    "trailer_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "purchase_links": {
+      "steam": "https://store.steampowered.com",
+      "xbox_store": "https://www.xbox.com"
+    },
+    "system_requirements": {
+      "minimum": "Intel i5-7600K, GTX 1060, 8GB RAM",
+      "recommended": "Intel i7-9700K, RTX 2070, 16GB RAM"
+    },
+    "ratings": [
+      {"source": "metacritic", "score": 86, "max_score": 100}
+    ],
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-08-20T00:00:00Z"
+  }
+]
